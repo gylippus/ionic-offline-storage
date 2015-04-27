@@ -9,7 +9,7 @@ angular.module('starter.services', [])
     definition: 'prolonged and idle discussion, utter waste of time'
   }, {
     id: 1,
-    name: 'Gordon Bennet',
+    name: 'Gordon Bennett',
     definition: 'Woah, .. To be surprised'
   }, {
     id: 2,
