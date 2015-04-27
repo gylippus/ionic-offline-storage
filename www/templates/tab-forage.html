@@ -1,0 +1,41 @@
+<ion-view view-title="localForage">
+  <ion-nav-bar class="bar-balanced">
+
+  </ion-nav-bar>
+  <ion-content class="padding">
+
+    <div class="add-data" style="width:300px;">
+
+    <h4><i class="ion-plus"></i>  Add Data</h4>
+      <label class="item item-input item-select">
+        {{ctrlData.selectedPhrase.name}}
+         <select ng-options="phrase as phrase.name for phrase in phrases track by phrase.name"
+              ng-model="ctrlData.selectedPhrase">
+        </select>
+      </label>
+    <br>
+    <label class="item item-input">
+      <input type="text" placeholder="New Phrase" ng-model="ctrlData.newPhrase.name">
+    </label>
+    <br>
+    <button class="button" ng-click="addData()">Submit</button>
+
+    </div>
+    <hr>
+
+    <div>
+      <h4>localForage Data <i class="ion-edit" ng-click="showDelete()" style="margin-left:10px"></i></h4>
+      <div id="data-display">
+        <ion-list show-delete="shouldShowDelete">
+                <ion-item class="item-text-wrap" ng-repeat="data in storedData track by $index">
+                  <p>{{data}}</p>
+                  <ion-delete-button class="ion-minus-circled"
+                ng-click="removeData($index)">
+              </ion-delete-button>
+                </ion-item>
+              </ion-list>
+      </div>
+    </div>
+
+  </ion-content>
+</ion-view>

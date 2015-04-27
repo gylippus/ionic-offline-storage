@@ -1,0 +1,29 @@
+<!--
+Create tabs with an icon and label, using the tabs-positive style.
+Each tab's child <ion-nav-view> directive will have its own
+navigation history that also transitions its views in and out.
+-->
+<ion-tabs class="tabs-icon-top tabs-color-active-positive">
+
+  <!-- LocalStorage Tab -->
+  <ion-tab title="LocalS" icon-off="ion-code-download" icon-on="ion-code-download" href="#/tab/local">
+    <ion-nav-view name="tab-local"></ion-nav-view>
+  </ion-tab>
+
+  <!-- LocalForage Tab -->
+  <ion-tab title="LocalF" icon-off="ion-leaf" icon-on="ion-leaf" href="#/tab/forage">
+    <ion-nav-view name="tab-forage"></ion-nav-view>
+  </ion-tab>
+
+  <!-- WebSQL Tab -->
+  <ion-tab title="WebSQL" icon-off="ion-monitor" icon-on="ion-monitor" href="#/tab/web">
+    <ion-nav-view name="tab-web"></ion-nav-view>
+  </ion-tab>
+
+  <!-- SQLite -->
+  <ion-tab title="SQLite" icon-off="ion-ios-folder-outline" icon-on="ion-ios-folder" href="#/tab/sql">
+    <ion-nav-view name="tab-sql"></ion-nav-view>
+  </ion-tab>
+
+
+</ion-tabs>

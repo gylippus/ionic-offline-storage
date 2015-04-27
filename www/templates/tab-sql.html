@@ -1,0 +1,42 @@
+<ion-view view-title="SQLite">
+  <ion-nav-bar class="bar-royal">
+
+  </ion-nav-bar>
+  <ion-content class="padding">
+
+    <div class="add-data" style="width:300px;">
+
+    <h4><i class="ion-plus"></i>  Add Data</h4>
+      <label class="item item-input item-select">
+        {{ctrlData.selectedPhrase.name}}
+         <select ng-options="phrase as phrase.name for phrase in phrases track by phrase.name"
+              ng-model="ctrlData.selectedPhrase" ng-disabled="!webView">
+        </select>
+      </label>
+    <br>
+    <label class="item item-input">
+      <input type="text" placeholder="New Phrase" ng-model="ctrlData.newPhrase.name" ng-disabled="!webView">
+    </label>
+    <br>
+    <button class="button" ng-click="addData()" ng-disabled="!webView">Submit</button>
+
+    </div>
+    <hr>
+
+    <div>
+      <h4>SQLite Data <i class="ion-edit" ng-click="showDelete()" style="margin-left:10px"></i></h4>
+      <p ng-if="!webView">SQLite not available in browser</p>
+    <div id="data-display">
+      <ion-list show-delete="shouldShowDelete">
+              <ion-item class="item-text-wrap" ng-repeat="data in storedData track by $index">
+                <p>{{data.name}}</p>
+                <ion-delete-button class="ion-minus-circled"
+              ng-click="removeData($index, data.id)">
+            </ion-delete-button>
+              </ion-item>
+            </ion-list>
+    </div>
+    </div>
+
+  </ion-content>
+</ion-view>
